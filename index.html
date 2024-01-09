@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="scriptInicio.js" defer></script>
+    <title>SeriesMania</title>
+    <style>
+        select{
+            margin-top: 30px;
+        }
+        #selectGenero{
+            margin-left: 260px;
+        }
+        h1{
+            margin-left: 260px;
+            margin-top: 30px;
+        }
+        .row{
+          display: grid;
+          margin-top: 30px;
+          margin-left: 320px;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          grid-template-rows: repeat(auto-fill, minmax(220px, 1fr));
+          grid-gap: 40px;
+          margin-bottom: 80px;
+          width: 60%;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            width: 144px;
+            height: 221px;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 2) 0px 5px 15px;
+        }
+        .card:hover{
+          transition: transform 0.1s;
+          transform: scale(1.1);
+        }
+        img{
+            display: flex;
+            width: 140px;
+            border-radius: 5px 5px 0 0;
+            margin-top: 0;
+        }
+
+        @media (max-width: 400px) {
+          #selectGenero{
+            margin-left: 150px;
+          }
+          h1{
+            margin-left: 180px;
+          }
+            .row {
+              margin-left: 150px;
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        @media (max-width: 1000px) {
+          #selectGenero{
+            margin-left: 120px;
+          }
+          h1{
+            margin-left: 180px;
+          }
+            .row {
+              margin-left: 150px;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <i class="fas fa-film" style="color:darkcyan; margin-right: 15px;"></i>
+          <a class="navbar-brand" href="index.html" style="margin-right: 30px;">SeriesMania </a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html" style="margin-right: 30px;">Series</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="plataformas.html">Plataformas</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <select id="selectGenero" class="bg-dark text-light">
+        <option value="Genero" selected="Tipo">*Género*</option>
+        <option value="accion">Action</option>
+        <option value="aventura">Adventure</option>
+        <option value="anime">Anime</option>
+        <option value="niños">Children</option>
+        <option value="comedia">Comedy</option>
+        <option value="crimen">Crime</option>
+        <option value="drama">Drama</option>
+        <option value="espias">Espionage</option>
+        <option value="familia">Family</option>
+        <option value="fantasía">Fantasy</option>
+        <option value="comida">Food</option>
+        <option value="historia">History</option>
+        <option value="horror">Horror</option>
+        <option value="musica">Music</option>
+        <option value="misterio">Mistery</option>
+        <option value="naturaleza">Nature</option>
+        <option value="romance">Romance</option>
+        <option value="cienciaFiccion">Science-fiction</option>
+        <option value="deportes">Sports</option>
+        <option value="thriller">Thriller</option>
+        <option value="viajes">Travel</option>
+        <option value="guerra">War</option>
+        <option value="oeste">Western</option>
+    </select>
+    <button type="button" id="buscador" class="btn btn-outline-primary btn-small shadow-lg p-2 mb-1 bg-body-tertiary rounded" style="margin-left: 10px;">Buscar</button>
+    
+    <a href="#" id="addSeriesBtn" class="btn btn-success" style="margin-left: 200px;">Añadir</a>
+    <a href="#" id="removeSeriesBtn" class="btn btn-danger">Eliminar</a>
+
+    <div id="resultados"></div>
+
+    <h1>SERIES</h1>
+    <div class="row" id="seriesContainer">
+      <div class="card">
+        <a href="doctorwho.html">
+            <img src="./Imagenes/DoctorWho.jpg">
+         </a>
+        <div class="card-body; btn-outline-primary">
+          <p class="card-text">Doctor Who</p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="breakingbad.html">
+            <img src="./Imagenes/BreakingBad.jpg">
+         </a>
+        <div class="card-body; btn-outline-warning">
+          <p class="card-text">Breaking Bad</p>
+        </div>
+      </div>
+      <div class="card">
+            <img src="./Imagenes/Chernobyl.jpg">
+        <div class="card-body; btn-outline-success">
+          <p class="card-text">Chernobyl</p>
+        </div>
+      </div>
+      <div class="card">
+            <img src="./Imagenes/GameofThrones.jpg">
+        <div class="card-body; btn-outline-primary">
+          <p class="card-text">Game of thrones</p>
+        </div>
+      </div>
+      <div class="card">
+            <img src="./Imagenes/AttackonTitan.jpg">
+        <div class="card-body; btn-outline-danger">
+          <p class="card-text">Attack on titan</p>
+        </div>
+      </div>
+      <div class="card">
+            <img src="./Imagenes/Sopranos.jpg">
+        <div class="card-body; btn-outline-danger">
+          <p class="card-text">The sopranos</p>
+        </div>
+      </div>
+      <div class="card">
+            <img src="./Imagenes/RickandMorty.jpg">
+        <div class="card-body; btn-outline-success">
+          <p class="card-text">Rick and Morty</p>
+        </div>
+      </div>
+      <div class="card">
+            <img src="./Imagenes/House.jpg">
+        <div class="card-body; btn-outline-dark">
+          <p class="card-text">House</p>
+        </div>
+      </div>
+      <div class="card">
+            <img src="./Imagenes/Fargo.jpg">
+        <div class="card-body; btn-outline-danger">
+          <p class="card-text">Fargo</p>
+        </div>
+      </div>
+      <div class="card">
+            <img src="./Imagenes/TheBoys.jpg">
+        <div class="card-body; btn-outline-primary">
+          <p class="card-text">The Boys</p>
+        </div>
+      </div>
+      <div class="card">
+            <img src="./Imagenes/BetterCallSaul.jpg">
+        <div class="card-body; btn-outline-danger">
+          <p class="card-text">Better Call Saul</p>
+        </div>
+      </div>
+      <div class="card">
+            <img src="./Imagenes/Vikings.jpg">
+        <div class="card-body; btn-outline-dark">
+          <p class="card-text">Vikings</p>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
